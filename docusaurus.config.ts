@@ -88,7 +88,12 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
-        {href: 'https://cloud-native.slack.com/archives/C09NM59KKEZ', label: 'Slack', position: 'right'}, // TODO: Make this a nice icon
+        {
+          href: 'https://cloud-native.slack.com/archives/C09NM59KKEZ',
+          position: 'right',
+          className: 'header-slack-link',
+          'aria-label': 'Slack',
+        },
         {
           href: 'https://t.me/oteldb_en',
           position: 'right',
