@@ -43,6 +43,10 @@
   background-size: contain;
 }
 
+html[data-theme='dark'] .header-slack-link:before {
+  filter: invert(100%);
+}
+
 .header-github-link:hover, .header-telegram-link:hover, .header-slack-link:hover {
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 50%;
@@ -88,3 +92,5 @@ html[data-theme='dark'] .header-telegram-link:hover {
 html[data-theme='dark'] .header-telegram-link:before {
   filter: invert(100%);
 }
+
+
