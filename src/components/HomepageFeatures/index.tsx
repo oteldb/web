@@ -11,32 +11,33 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'One storage for all signals',
+    Svg: require('@site/static/img/DB.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        OTelDB supports storing traces, metrics, and logs in a single, unified
+        database, simplifying data management and analysis.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'OpenTelemetry-first',
+    Svg: require('@site/static/img/OpenTelemetry.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        OTelDB is built with a focus on OpenTelemetry, ensuring seamless
+        integration and support for the OpenTelemetry ecosystem.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Powered by ClickHouse',
+    Svg: require('@site/static/img/clickhouse-yellow-badge.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        OTelDB leverages ClickHouse, a high-performance columnar database,
+        providing fast query performance and scalability for large volumes of
+        observability data.
       </>
     ),
   },
