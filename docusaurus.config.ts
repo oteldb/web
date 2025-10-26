@@ -111,16 +111,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'Slack',
+              href: 'https://cloud-native.slack.com/archives/C09NM59KKEZ',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'Telegram Group',
+              href: 'https://t.me/oteldb_en',
             },
             {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Telegram News',
+              href: 'https://t.me/oteldb',
             },
           ],
         },
