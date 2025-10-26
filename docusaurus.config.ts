@@ -88,10 +88,18 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {href: 'https://cloud-native.slack.com/archives/C09NM59KKEZ', label: 'Slack', position: 'right'}, // TODO: Make this a nice icon
         {
-          href: 'https://github.com/oteldb/oteldb',
-          label: 'GitHub',
+          href: 'https://t.me/oteldb_en',
           position: 'right',
+          className: 'header-telegram-link',
+          'aria-label': 'Telegram Group',
+        },
+        {
+          href: 'https://github.com/oteldb',
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
         },
       ],
     },
