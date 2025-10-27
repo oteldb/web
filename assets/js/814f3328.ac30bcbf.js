@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkweb=globalThis.webpackChunkweb||[]).push([[472],{5513:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"MDX Blog Post","permalink":"/blog/mdx-blog-post","unlisted":false,"date":"2025-10-27T00:00:00.000Z"}]}')}}]);
