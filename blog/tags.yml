@@ -1,8 +1,3 @@
-facebook:
-  label: Facebook
-  permalink: /facebook
-  description: Facebook tag description
-
 hello:
   label: Hello
   permalink: /hello
@@ -17,3 +12,8 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+roadmap:
+  label: Roadmap
+  permalink: /roadmap
+  description: Roadmap
