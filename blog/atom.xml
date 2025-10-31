@@ -2,11 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://oteldb.tech/blog</id>
     <title>oteldb Blog</title>
-    <updated>2025-10-27T00:00:00.000Z</updated>
+    <updated>2025-10-31T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://oteldb.tech/blog"/>
     <subtitle>oteldb Blog</subtitle>
     <icon>https://oteldb.tech/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Roadmap]]></title>
+        <id>https://oteldb.tech/blog/roadmap-2025-2026</id>
+        <link href="https://oteldb.tech/blog/roadmap-2025-2026"/>
+        <updated>2025-10-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[- Q4 2025: Performance Optimization]]></summary>
+        <content type="html"><![CDATA[<ul>
+<li class="">Q4 2025: <a href="https://github.com/oteldb/oteldb/issues/819" target="_blank" rel="noopener noreferrer" class="">Performance Optimization</a></li>
+<li class="">Q1 2026: <a href="https://github.com/oteldb/oteldb/issues/820" target="_blank" rel="noopener noreferrer" class="">Multi-Tenancy Support</a></li>
+<li class="">Q2 2026: <a href="https://github.com/oteldb/oteldb/issues/821" target="_blank" rel="noopener noreferrer" class="">Sharding support</a></li>
+<li class="">Q2 2026: <a href="https://github.com/oteldb/oteldb/issues/825" target="_blank" rel="noopener noreferrer" class="">Profiling signal</a></li>
+<li class="">Q3 2026: <a href="https://github.com/oteldb/oteldb/issues/824" target="_blank" rel="noopener noreferrer" class="">Custom UI and Grafana Plugin</a></li>
+</ul>
+<p>Stay tuned for more updates as we continue to enhance OTelDB!</p>]]></content>
+        <author>
+            <name>Aleksandr Razumov</name>
+            <uri>https://github.com/ernado</uri>
+        </author>
+        <category label="Roadmap" term="Roadmap"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[MDX Blog Post]]></title>
         <id>https://oteldb.tech/blog/mdx-blog-post</id>
