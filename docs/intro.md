@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+# Installing OTelDB
+
 ## Add helm repository
 
 ```bash

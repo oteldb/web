@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+# Installing ClickHouse
+
 To install ClickHouse, you can use [ClickHouse Operator](https://github.com/Altinity/clickhouse-operator)
 from [Altinity](https://altinity.com/).
 
@@ -14,7 +16,11 @@ helm upgrade ch clickhouse-operator/altinity-clickhouse-operator --install --nam
 
 ## Creating simple instance
 
+Let's create simple ClickHouse instance optimized for low-memory environments,
+that is not shared nor replicated.
+
 Create `chi.yml`:
+
 ```yaml
 apiVersion: "clickhouse.altinity.com/v1"
 kind: "ClickHouseInstallation"
@@ -110,3 +116,28 @@ spec:
 ```
 
 Run `kubectl apply -f chi.yal` to create ClickHouse instance.
+Your ClickHouse server will be available with following DSN:
+
+```
+clickhouse://admin:admin@chi-clickhouse-default-0-0.clickhouse:9000/default
+```
+
+## Accessing ClickHouse
+
+Also, you can port-forward ClickHouse client to your local machine for easier access:
+
+:::tip
+
+Use
+
+```
+clickhouse-client --compression yes
+```
+To access forwarded ClickHouse, as compression is disabled by default on localhost.
+
+:::
+
+```bash
+kubectl -n clickhouse port-forward svc/clickhouse-clickhouse 9000:9000 8123:8123
+```
+
