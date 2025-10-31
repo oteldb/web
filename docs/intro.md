@@ -88,3 +88,93 @@ config:
 ```bash
 helm upgrade otel oteldb/oteldb --install --values oteldb.yml --namespace faster --create-namespace
 ```
+
+## Usage
+
+Add following to your Grafana datasource configuration.
+
+For example, if you are using Grafana Helm chart, add to `values.yaml`:
+
+```yaml
+datasources:
+  datasources.yaml:
+    apiVersion: 1
+    datasources:
+      - name: "oteldb: TraceQL"
+        type: tempo
+        access: proxy
+        orgId: 1
+        url: http://otel-oteldb.faster.svc.cluster.local:3200
+        uid: traceql
+        jsonData:
+          httpMethod: GET
+          tracesToLogsV2:
+            # Field with an internal link pointing to a logs data source in Grafana.
+            # datasourceUid value must match the uid value of the logs data source.
+            datasourceUid: logql
+            spanStartTimeShift: '-1h'
+            spanEndTimeShift: '1h'
+            customQuery: true
+            query: '{$${__tags}} |= "$${__span.traceId}"'
+            tags:
+              - key: service.name
+                value: service_name
+          tracesToMetrics:
+            datasourceUid: victoria
+            spanStartTimeShift: '-1h'
+            spanEndTimeShift: '1h'
+            tags:
+              - key: service.name
+                value: service_name
+          tracesToProfiles:
+            datasourceUid: 'pyroscope'
+            profileTypeId: 'process_cpu:cpu:nanoseconds:cpu:nanoseconds'
+          nodeGraph:
+            enabled: true
+          serviceMap:
+            datasourceUid: prometheus
+          lokiSearch:
+            datasourceUid: logql
+
+      - name: "oteldb: LogQL"
+        type: loki
+        access: proxy
+        orgId: 1
+        url: http://otel-oteldb.faster.svc.cluster.local:3100
+        uid: logql
+        jsonData:
+          serviceMap:
+            datasourceUid: prometheus
+          maxLines: 500
+          derivedFields:
+            - datasourceUid: traceql
+              matcherType: label
+              matcherRegex: trace_id
+              name: trace
+              url: '$${__value.raw}'
+              urlDisplayLabel: 'View Trace'
+
+      - name: "oteldb: PromQL"
+        type: prometheus
+        access: proxy
+        orgId: 1
+        url: http://otel-oteldb.faster.svc.cluster.local:9090
+        uid: promql
+
+      # Optionally add ClickHouse datasource
+      - name: "ClickHouse"
+        type: grafana-clickhouse-datasource
+        access: proxy
+        orgId: 1
+        uid: clickhouse
+        jsonData:
+          defaultDatabase: default
+          port: 9000
+          host: chi-clickhouse-default-0-0.clickhouse
+          username: admin
+          tlsSkipVerify: false
+
+        secureJsonData:
+          password: admin
+
+```
