@@ -76,7 +76,7 @@ const config: Config = {
     navbar: {
       title: 'oteldb',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'OTelDB logo',
         src: 'img/logo.svg',
       },
       items: [
